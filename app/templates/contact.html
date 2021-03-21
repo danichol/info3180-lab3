@@ -8,7 +8,7 @@
 <br>
 
 <form method = "POST" action ="/contact">
-    {{ for.csrf_token}}
+    {{ form.csrf_token}}
     <label for ="name">Name <mark>(Required)</mark></label>
     <p>Please enter your full name</p>
     <input type="text" id="name" name=name><br>
@@ -25,7 +25,7 @@
     <p> Please enter the message you would like to send.</p>
     <input type="text" id="body" body=body><br>
     
-    <input type="submit" value ="Submit">
+    <button type="submit">Send</button>
    </form>
 
    {% endblock %}

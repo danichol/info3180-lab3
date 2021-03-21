@@ -1,3 +1,20 @@
 body {
     padding-top: 5rem;
 }
+
+label{
+font-weight: bold;
+}
+
+mark{
+font-weight: bold;
+color: red;
+}
+
+button {
+    background-color: #4267B2;
+    color: white;
+    width: 100px;
+    border-radius: 5px;
+}
+

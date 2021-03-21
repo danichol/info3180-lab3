@@ -1,0 +1,31 @@
+% extends 'base.html' %
+
+{% block main %}
+
+<h1> Contact Form </h1>
+<br>
+<p> Fill in this form to contact the site owners. </p>
+<br>
+
+<form method = "POST" action ="/contact">
+    {{ for.csrf_token}}
+    <label for ="name">Name <mark>(Required)</mark></label>
+    <p>Please enter your full name</p>
+    <input type="text" id="name" name=name><br>
+
+    <label for ="email">E-mail <mark>(Required)</mark></label>
+    <p>Please enter your e-mail address</p>
+    <input type="email" id="email" email=email><br>
+        
+    <label for ="subject">Subject <mark>(Required)</mark></label>
+    <p> Please enter the subject for your message. </p>
+    <input type="text" id="name" subject=subject><br>
+        
+    <label for ="body">Message <mark>(Required)</mark></label>
+    <p> Please enter the message you would like to send.</p>
+    <input type="text" id="body" body=body><br>
+    
+    <input type="submit" value ="Submit">
+   </form>
+
+   {% endblock %}

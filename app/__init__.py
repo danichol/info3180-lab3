@@ -1,6 +1,6 @@
 from flask import Flask
 
-from flaskext.mail import Mail,Message 
+from flask_mail import Mail,Message 
 from .config import Config
 from flask_wtf.csrf import CSRFProtect
 

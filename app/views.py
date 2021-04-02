@@ -29,8 +29,7 @@ def about():
 @app.route('/contact')
 def contact():
     """Render the website's contact-form page"""
-   
-    contactform = ContactForm(request.form)
+    contactform = ContactForm()
 
     if request.method == 'POST':
         if form.validate_on_submit():
@@ -39,16 +38,16 @@ def contact():
             #subject = contactform.subject.data
             #body = contactform.body.data
 
-            request.form['subject']
-            sender=(request.form['name'],request.form['email'])
-            recipients=["someone@example.com"]
+            subject = request.form['subject']
+            sender = (request.form['name'],request.form['email'])
+            recipients = ["someone@example.com"]
 
             msg=Message(subject,sender,recipients)
 
             msg.body = request.form['body']
             mail.send(msg)
             flash('You have successfully filled out the form, message sent!', 'success')
-            redirect(url_for('home'))
+            redirect(url_for('/'))
 
         flash_errors(contactform)
     else:

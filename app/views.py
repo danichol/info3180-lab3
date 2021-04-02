@@ -40,7 +40,7 @@ def contact():
 
             request.form['subject']
             sender=(request.form['name'],request.form['email'])
-            recipients=["someone@example.com"])
+            recipients=["someone@example.com"]
 
             msg=Message(subject,sender,recipients)
 

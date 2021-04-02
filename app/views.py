@@ -32,14 +32,19 @@ def contact():
     contactform = ContactForm(request.form)
 
     if request.method == 'POST':
-        if form.validate_on_submit():
+        if myform.validate_on_submit():
             name = contactform.name.data
             email = contactform.email.data
             subject = contactform.subject.data
             body = contactform.body.data
 
-            msg = Message(request.form['subject'],sender=(request.form['name'],request.form['email']),recipients=["check@mail.com"])
-            msg.body = request.form.body
+            request.form['subject']
+            sender=(request.form['name'],request.form['email'])
+            recipients=["someone@example.com"])
+
+            msg=Message(subject,sender,recipients)
+
+            msg.body = request.form['body']
             mail.send(msg)
             flash('You have successfully filled out the form, message sent!', 'success')
             redirect(url_for('home'))

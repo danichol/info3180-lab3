@@ -23,12 +23,13 @@ def home():
 @app.route('/about/')
 def about():
     """Render the website's about page."""
-    return render_template('about.html', name="Mary Jane")
+    return render_template('about.html', name="Daneel Nichol")
 
 
 @app.route('/contact')
 def contact():
     """Render the website's contact-form page"""
+   
     contactform = ContactForm(request.form)
 
     if request.method == 'POST':

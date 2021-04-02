@@ -39,7 +39,7 @@ def contact():
             body = contactform.body.data
 
             msg = Message(request.form['subject'],sender=(request.form['name'],request.form['email']),recipients=["check@mail.com"])
-            msg.body = body
+            msg.body = request.form.body
             mail.send(msg)
             flash('You have successfully filled out the form, message sent!', 'success')
             redirect(url_for('home'))

@@ -29,14 +29,14 @@ def about():
 @app.route('/contact')
 def contact():
     """Render the website's contact-form page"""
-    form = ContactForm(request.form)
+    contactform = ContactForm(request.form)
 
     if request.method == 'POST':
-        if myform.validate_on_submit():
-            name = form.name.data
-            email = form.email.data
-            subject = form.subject.data
-            body = form.body.data
+        if form.validate_on_submit():
+            name = contactform.name.data
+            email = contactform.email.data
+            subject = contactform.subject.data
+            body = contactform.body.data
 
             msg = Message(request.form['subject'],sender=(request.form['name'],request.form['email']),recipients=["check@mail.com"])
             msg.body = request.form.body
@@ -46,7 +46,7 @@ def contact():
 
         flash_errors(contactform)
     else:
-        return render_template('contact.html',form=form)
+        return render_template('contact.html',contactform=contactform)
 ###
 # The functions below should be applicable to all Flask apps.
 ###

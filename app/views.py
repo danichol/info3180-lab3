@@ -38,7 +38,7 @@ def contact():
             subject = contactform.subject.data
             body = contactform.body.data
 
-            msg = Message("Your Subject", sender=name, email),recipients=["to@example.com"]) 
+            msg = Message("Your Subject", sender=name, email,recipients=["to@example.com"]) 
             msg.body = body
             mail.send(msg)
             flash('You have successfully filled out the form, message sent!', 'success')

@@ -29,7 +29,7 @@ def about():
 @app.route('/contact')
 def contact():
     """Render the website's contact-form page"""
-    contactform = ContactForm()
+    contactform = ContactForm(request.form)
 
     if request.method == 'POST':
         if myform.validate_on_submit():

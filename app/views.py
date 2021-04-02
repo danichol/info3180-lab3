@@ -33,11 +33,11 @@ def contact():
     contactform = ContactForm(request.form)
 
     if request.method == 'POST':
-        if myform.validate_on_submit():
-            name = contactform.name.data
-            email = contactform.email.data
-            subject = contactform.subject.data
-            body = contactform.body.data
+        if form.validate_on_submit():
+            #name = contactform.name.data
+            #email = contactform.email.data
+            #subject = contactform.subject.data
+            #body = contactform.body.data
 
             request.form['subject']
             sender=(request.form['name'],request.form['email'])
